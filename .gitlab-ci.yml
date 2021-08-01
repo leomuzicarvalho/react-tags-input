@@ -1,0 +1,42 @@
+image:
+  name: node:alpine
+
+stages:
+  - build
+  - lint
+  - test
+
+build:
+  stage: build
+  before_script:
+    - export NODE_ENV=test
+    - npm i
+  script:
+    - npm run build
+  artifacts:
+    untracked: false
+    expire_in: 1 day
+    paths:
+      - ./dist
+
+lint:
+  stage: lint
+  before_script:
+    - export NODE_ENV=test
+    - npm i
+  script:
+    - npm run lint
+
+test:
+  stage: test
+  before_script:
+    - export NODE_ENV=test
+    - export CI=true
+    - npm i
+  script:
+    - npm run test:ci
+  artifacts:
+    untracked: false
+    expire_in: 5 days
+    paths:
+      - ./coverage

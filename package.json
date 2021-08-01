@@ -1,0 +1,47 @@
+{
+  "name": "react-input-tags",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack --config config/webpack.prod.js",
+    "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose",
+    "start": "webpack serve --config config/webpack.dev.js",
+    "test": "jest --passWithNoTests --no-cache --runInBand",
+    "test:watch": "npm test -- --watchAll",
+    "test:ci": "npm test -- --coverage"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@material-ui/core": "4.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/node": "^14.14.37",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "babel-jest": "^27.0.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.2",
+    "source-map-loader": "^3.0.0",
+    "svg-jest": "^1.0.1",
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "tslint-react": "^5.0.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
