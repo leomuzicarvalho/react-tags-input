@@ -25,7 +25,7 @@ describe('TagsInput Component', () => {
   it('deve renderizar as tags enviadas por atributos', () => {
     const emails = ['contato@rarolabs.com.br', 'nao-responda@rarolabs.com.br']
 
-    const { debug } = render(
+    const component = render(
       <TagsInput
         variant="outlined"
         id="tags"
@@ -38,7 +38,8 @@ describe('TagsInput Component', () => {
       />
     )
 
-    debug()
+    expect(component.queryByText('contato@rarolabs.com.br')).toBeVisible()
+    expect(component.queryByText('nao-responda@rarolabs.com.br')).toBeVisible()
   })
 
   it('deve renderizar tags quando preencher o input e pressionar enter', () => {
